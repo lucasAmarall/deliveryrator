@@ -2,6 +2,7 @@ import React from "react";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import CollaboratorsList from "../../Templates/CollaboratorsList";
+import { Link, Typography } from "@material-ui/core";
 
 const Home: React.FC = () => {
 	return (
@@ -15,7 +16,27 @@ const Home: React.FC = () => {
 						display="flex"
 						alignItems="center"
 					>
-						<Box height="400px" width="100%" bgcolor="secondary.main" mt={-16}>
+						<Box
+							height="460px"
+							width="100%"
+							bgcolor="primary.contrastText"
+							mt={-16}
+						>
+							<Box>
+								<Typography variant="h5" color="textPrimary">
+									<Link href="https://github.com/lucasAmarall/deliveryrator">
+                    Link para o repo. deste projeto
+									</Link>
+								</Typography>
+								<Typography variant="h5" color="textPrimary">
+									<Link href="https://github.com/lucasAmarall/countriesList">
+                    Projeto sem nenhuma lib para UI (recomendo dar um checke ;))
+									</Link>
+								</Typography>
+								<Typography variant="h5" color="textPrimary">
+									<Link href="https://github.com/lucasAmarall">Meu github</Link>
+								</Typography>
+							</Box>
 							<iframe
 								width="100%"
 								height="400px"
