@@ -4,14 +4,14 @@ import GlobalStyles from "./constants/GloablalStyles";
 import { GlobalProvider } from "./context/GlobalContext";
 
 function App(): React.ReactElement {
-  return (
-    <div className="App">
-      <GlobalProvider>
-        <GlobalStyles />
-        <Router />
-      </GlobalProvider>
-    </div>
-  );
+	return (
+		<div className="App">
+			<GlobalProvider>
+				<GlobalStyles />
+				<Router />
+			</GlobalProvider>
+		</div>
+	);
 }
 
 export default App;

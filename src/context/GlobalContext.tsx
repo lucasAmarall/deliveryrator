@@ -11,7 +11,7 @@ export const GlobalDispatchContext = createContext<IDispatch | undefined>(
 	undefined
 );
 
-export const GlobalProvider = ({ children }: IGlobalProvider) => {
+export const GlobalProvider: React.FC<IGlobalProvider> = ({ children }) => {
 	const [state, dispatch] = useReducer(GlobalReducer, {
 		collaboratorList: [],
 	});

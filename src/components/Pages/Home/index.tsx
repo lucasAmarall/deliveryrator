@@ -1,10 +1,9 @@
 import React from "react";
-import { IHomeProps } from "./interface";
 import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import CollaboratorsList from "../../Templates/CollaboratorsList";
 
-const Home: React.FC<IHomeProps> = () => {
+const Home: React.FC = () => {
   return (
     <>
       <Box bgcolor="primary.main">
@@ -17,7 +16,15 @@ const Home: React.FC<IHomeProps> = () => {
             alignItems="center"
           >
             <Box height="400px" width="100%" bgcolor="secondary.main" mt={-16}>
-              <h1>Home</h1>
+              <iframe
+                width="100%"
+                height="400px"
+                src="https://www.youtube.com/embed/fJ9rUzIMcZQ"
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
             </Box>
           </Box>
         </Container>

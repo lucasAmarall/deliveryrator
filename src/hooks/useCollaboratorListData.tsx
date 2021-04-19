@@ -6,31 +6,34 @@ import CollaboratorService from "../api/services/collaboratorService";
 const service = new CollaboratorService(APIService);
 
 const useCollaboratorListData = ({
-  saveToStore,
-  alreadyLoaded,
+	saveToStore,
+	alreadyLoaded,
 }: {
   saveToStore: (data: ICollaborator[]) => void;
   alreadyLoaded: boolean;
-}) => {
-  const [collaboratorsList, setCollaboratorsList] = useState<ICollaborator[]>(
-    []
-  );
+}): {
+  load: () => Promise<void>;
+  collaboratorsList: ICollaborator[];
+} => {
+	const [collaboratorsList, setCollaboratorsList] = useState<ICollaborator[]>(
+		[]
+	);
 
-  const load = async () => {
-    if (alreadyLoaded) return;
-    try {
-      const { data } = await service.list();
-      saveToStore(data);
-      setCollaboratorsList(data);
-    } catch {
-      setCollaboratorsList([]);
-    }
-  };
+	const load = async () => {
+		if (alreadyLoaded) return;
+		try {
+			const { data } = await service.list();
+			saveToStore(data);
+			setCollaboratorsList(data);
+		} catch {
+			setCollaboratorsList([]);
+		}
+	};
 
-  return {
-    load,
-    collaboratorsList,
-  };
+	return {
+		load,
+		collaboratorsList,
+	};
 };
 
 export default useCollaboratorListData;
