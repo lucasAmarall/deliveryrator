@@ -14,12 +14,12 @@ import { useFakeLoading } from "../../../hooks/useFakeLoading";
 const CollaboratorsList: React.FC<{ maxHeight?: number }> = ({
 	maxHeight = 400,
 }) => {
-	const { collaboratorList } = useGlobalState();
 	const { range, loadMore, loading, page } = useFakeLoading(20);
-
+	const { collaboratorList } = useGlobalState();
 	const [collaboratorListLoaded, setCollaboratorListLoaded] = useState<
     ICollaborator[]
   >([]);
+
 	const dispatch = useGlobalDispatch();
 	// eslint-disable-next-line
   const listRef: any = useRef(null);
